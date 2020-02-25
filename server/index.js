@@ -33,3 +33,8 @@ app.listen(port, function () {
   console.log("Who's there?");
   console.log(`Your server, listening on port ${port}`);
 });
+
+
+module.exports = {
+  app
+}

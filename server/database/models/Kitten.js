@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../database');
 
-const User = db.define('user', {
+const Kitten = db.define('user', {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -9,13 +9,23 @@ const User = db.define('user', {
       notEmpty: false
     }
   },
-  email: {
+  breed: {
     type: Sequelize.STRING,
     allowNull: false,
     validate: {
       notEmpty: false
     }
+  },
+  description: {
+    type: Sequelize.TEXT
+  },
+  age: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      isNumeric: true
+    }
   }
 });
 
-module.exports = User;
+module.exports = Kitten;
